@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.kimzing</groupId>
     <artifactId>base-springboot-starter</artifactId>
-    <!-- -SNAPSHOT -RELEASES -->
+    <!-- -SNAPSHOT -RELEASE -->
     <version>0.0.1-SNAPSHOT</version>
     <name>base-springboot-starter</name>
     <description>base starter for Spring Boot, include utils、log and so on</description>
