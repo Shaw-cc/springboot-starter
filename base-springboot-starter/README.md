@@ -94,7 +94,7 @@
 
 如果你喜欢此项目并且它对你确实有帮助，欢迎给我打赏一杯:coffee:~ 
 
-*just for fun ~*
+:chicken: just for fun ~
 
 **支付宝**
 
