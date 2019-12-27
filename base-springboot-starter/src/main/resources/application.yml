@@ -1,0 +1,16 @@
+# 完整示例配置
+base:
+  log:
+    enabled: true
+    time-pattern: yyyy-MM-dd HH:mm:ss
+  web:
+    advice:
+      enabled: true
+    restTemplate:
+      enabled: true
+    info:
+      version: 1.0.0
+      desc: 基础项目
+      enabled: true
+  property:
+    files: ["message.properties","exception.properties"]

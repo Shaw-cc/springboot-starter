@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.kimzing.base.autoconfigure.LogAspectAutoConfiguration,\
+  com.kimzing.base.autoconfigure.PropertyFileAutoConfiguration,\
+  com.kimzing.base.autoconfigure.WebAutoConfiguration,\
+  com.kimzing.base.autoconfigure.SpringContextUtilAutoConfiguration
