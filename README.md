@@ -13,6 +13,6 @@
 
 如果你喜欢此项目并且它对你确实有帮助，欢迎给我打赏一杯:coffee:~        *just for fun ~*
 
-**支付宝**      <img src="alipay.png" alt="aaa" style="align:left;zoom:30%;" />
+**支付宝**      <img src="https://images.kimzing.com/images/alipay.png?x-oss-process=style/KimZing" alt="aaa" style="align:left;zoom:30%;" />
 
-**微信**        <img src="wechatpay.png" alt="aaa" style="align:left;zoom:30%;" />
+**微信**        <img src="https://images.kimzing.com/images/wechatpay.png?x-oss-process=style/KimZing" alt="aaa" style="align:left;zoom:30%;" />
