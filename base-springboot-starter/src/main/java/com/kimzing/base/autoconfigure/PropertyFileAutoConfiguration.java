@@ -1,6 +1,6 @@
 package com.kimzing.base.autoconfigure;
 
-import com.kimzing.base.properties.FileProperties;
+import com.kimzing.base.autoconfigure.properties.FileProperties;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;

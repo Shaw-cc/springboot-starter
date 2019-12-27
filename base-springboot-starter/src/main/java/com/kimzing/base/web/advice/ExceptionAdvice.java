@@ -1,4 +1,4 @@
-package com.kimzing.base.controller.advice;
+package com.kimzing.base.web.advice;
 
 import com.kimzing.base.exception.BusinessException;
 import com.kimzing.base.utils.result.ApiResult;

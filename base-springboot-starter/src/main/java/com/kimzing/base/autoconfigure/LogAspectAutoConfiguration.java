@@ -2,7 +2,7 @@ package com.kimzing.base.autoconfigure;
 
 import com.kimzing.base.log.LogAspect;
 import com.kimzing.base.log.impl.DefaultLogAspect;
-import com.kimzing.base.properties.LogProperties;
+import com.kimzing.base.autoconfigure.properties.LogProperties;
 import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;

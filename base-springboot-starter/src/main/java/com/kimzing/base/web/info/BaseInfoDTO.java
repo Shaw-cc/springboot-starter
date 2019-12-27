@@ -1,4 +1,4 @@
-package com.kimzing.base.controller.info;
+package com.kimzing.base.web.info;
 
 import lombok.Builder;
 import lombok.Data;

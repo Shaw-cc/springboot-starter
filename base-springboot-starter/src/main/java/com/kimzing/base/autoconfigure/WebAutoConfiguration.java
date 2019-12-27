@@ -1,9 +1,9 @@
 package com.kimzing.base.autoconfigure;
 
-import com.kimzing.base.controller.advice.ExceptionAdvice;
-import com.kimzing.base.controller.info.BaseInfoController;
-import com.kimzing.base.controller.info.BaseInfoDTO;
-import com.kimzing.base.properties.WebProperties;
+import com.kimzing.base.web.advice.ExceptionAdvice;
+import com.kimzing.base.web.info.BaseInfoController;
+import com.kimzing.base.web.info.BaseInfoDTO;
+import com.kimzing.base.autoconfigure.properties.WebProperties;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;

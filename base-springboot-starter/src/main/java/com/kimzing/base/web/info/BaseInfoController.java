@@ -1,4 +1,4 @@
-package com.kimzing.base.controller.info;
+package com.kimzing.base.web.info;
 
 import lombok.Data;
 import org.springframework.web.bind.annotation.GetMapping;
