@@ -15,7 +15,7 @@
 
 **支付宝**
 
-![]("http://images.kimzing.com/images/alipay.png?x-oss-process=style/resize" style="zoom:30%;")
+![](http://images.kimzing.com/images/alipay.png?x-oss-process=style/resize)
 
 **微信**
 
