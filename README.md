@@ -13,6 +13,10 @@
 
 如果你喜欢此项目并且它对你确实有帮助，欢迎给我打赏一杯:coffee:~        *just for fun ~*
 
-**支付宝**      <img src="http://images.kimzing.com/images/alipay.png?x-oss-process=style/resize" style="zoom:30%;" />
+**支付宝**
 
-**微信**        <img src="http://images.kimzing.com/images/wechatpay.png?x-oss-process=style/resize" style="zoom:30%;" />
+<img src="http://images.kimzing.com/images/alipay.png?x-oss-process=style/resize" style="zoom:30%;" />
+
+**微信**
+
+<img src="http://images.kimzing.com/images/wechatpay.png?x-oss-process=style/resize" style="zoom:30%;" />
