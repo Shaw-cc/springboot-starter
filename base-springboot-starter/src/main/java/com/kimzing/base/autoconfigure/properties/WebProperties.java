@@ -38,11 +38,20 @@ public class WebProperties {
 
     @Data
     public static class InfoProperties {
+
+        /**
+         * 接口路径, default: /info
+         */
+        private String path;
+
         /**
          * Info接口开关
          */
         private Boolean enabled;
 
+        /**
+         * 接口响应内容
+         */
         private Map<String, Object> params;
     }
 

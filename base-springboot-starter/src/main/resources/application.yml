@@ -9,6 +9,7 @@ base:
     restTemplate:
       enabled: true
     info:
+      path: /info
       enabled: true
       params:
         application: ${spring.application.name}

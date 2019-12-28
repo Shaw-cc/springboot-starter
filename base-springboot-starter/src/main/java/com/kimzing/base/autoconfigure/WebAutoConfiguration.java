@@ -25,8 +25,6 @@ import org.springframework.web.servlet.DispatcherServlet;
 @ConditionalOnClass(DispatcherServlet.class)
 public class WebAutoConfiguration {
 
-    private static final String DEFAULT_APPLICATION_NAME = "default";
-
     /**
      * 注入RestTemplate实例，用于Http接口调用
      *
@@ -49,7 +47,7 @@ public class WebAutoConfiguration {
      */
     @Bean
     @ConditionalOnProperty(prefix = "base.web.info",
-            name = "enabled", havingValue = "true", matchIfMissing = true)
+            name = "enabled", havingValue = "true")
     @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.ANY)
     public BaseInfoController infoController(WebProperties webProperties) {
         BaseInfoController baseInfoController = new BaseInfoController();

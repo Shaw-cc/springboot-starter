@@ -16,9 +16,12 @@ import java.util.Map;
 @RestController
 public class BaseInfoController {
 
+    /**
+     * 响应内容
+     */
     private Map<String, Object> infoMap;
 
-    @GetMapping(value = "/info")
+    @GetMapping(value = "${base.web.info.path:/info}")
     public Map<String, Object> info() {
         return infoMap;
     }
