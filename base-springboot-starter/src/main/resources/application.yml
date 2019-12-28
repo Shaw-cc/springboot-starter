@@ -9,8 +9,11 @@ base:
     restTemplate:
       enabled: true
     info:
-      version: 1.0.0
-      desc: 基础项目
       enabled: true
+      params:
+        application: ${spring.application.name}
+        port: ${server.port}
+        version: 0.0.1
+        desc: 项目相关介绍
   property:
     files: ["message.properties","exception.properties"]

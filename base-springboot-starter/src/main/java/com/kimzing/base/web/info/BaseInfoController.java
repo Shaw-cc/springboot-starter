@@ -4,6 +4,8 @@ import lombok.Data;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Map;
+
 /**
  * 项目基本信息Rest接口.
  *
@@ -14,11 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class BaseInfoController {
 
-    private BaseInfoDTO baseInfoDTO;
+    private Map<String, Object> infoMap;
 
     @GetMapping(value = "/info")
-    public BaseInfoDTO info() {
-        return baseInfoDTO;
+    public Map<String, Object> info() {
+        return infoMap;
     }
 
 }

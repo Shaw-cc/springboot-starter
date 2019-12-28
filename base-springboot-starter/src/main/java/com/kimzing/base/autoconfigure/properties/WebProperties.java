@@ -3,6 +3,8 @@ package com.kimzing.base.autoconfigure.properties;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+import java.util.Map;
+
 /**
  * web相关配置
  */
@@ -41,15 +43,7 @@ public class WebProperties {
          */
         private Boolean enabled;
 
-        /**
-         * 项目描述
-         */
-        private String desc;
-
-        /**
-         * 项目版本
-         */
-        private String version;
+        private Map<String, Object> params;
     }
 
     @Data
