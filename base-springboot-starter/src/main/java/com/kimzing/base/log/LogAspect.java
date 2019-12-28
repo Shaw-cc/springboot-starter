@@ -8,6 +8,7 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -25,11 +26,8 @@ import java.util.Map;
 @Aspect
 public abstract class LogAspect {
 
+    @Value("${base.log.time-pattern:yyyy-MM-dd HH:mm:ss:SSS}")
     private String timePattern;
-
-    public void setTimePattern(String timePattern) {
-        this.timePattern = timePattern;
-    }
 
     @Pointcut("@annotation(com.kimzing.base.log.LogKim)")
     public void logPointCut() {

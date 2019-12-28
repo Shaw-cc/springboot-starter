@@ -1,9 +1,8 @@
 package com.kimzing.base.autoconfigure;
 
+import com.kimzing.base.autoconfigure.properties.LogProperties;
 import com.kimzing.base.log.LogAspect;
 import com.kimzing.base.log.impl.DefaultLogAspect;
-import com.kimzing.base.autoconfigure.properties.LogProperties;
-import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -35,9 +34,6 @@ public class LogAspectAutoConfiguration {
     @Bean
     public LogAspect logAspect(LogProperties logProperties) {
         DefaultLogAspect defaultLogAspect = new DefaultLogAspect();
-        String timePattern = StringUtils.isBlank(logProperties.getTimePattern()) ?
-                "yyyy-MM-dd HH:mm:ss:SSS" : logProperties.getTimePattern();
-        defaultLogAspect.setTimePattern(timePattern);
         return defaultLogAspect;
     }
 
