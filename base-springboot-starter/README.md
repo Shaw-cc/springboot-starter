@@ -59,7 +59,8 @@
     │   └── ...           # 相对独立的工具类，可以脱离spring项目使用
     └── web               # springboot-web相关自动配置
         ├── advice        # controller异常切面处理
-        └── info          # 项目基础信息 /info 接口配置
+        ├── info          # 项目基础信息 /info 接口配置
+        └── resolver      # 参数解析器
 ```
 
 
@@ -85,6 +86,18 @@
 ## 项目使用
 
 :green_book:[SpringBoot相关配置工具使用介绍](base-springboot-starter/spring.md)   :blue_book:[通用工具使用介绍 ](base-springboot-starter/spring.md)
+
+## TODO
+
+* 完善异常机制
+* Mybatis/Hibernate分页包装
+* 请求链路中添加请求id
+* 添加ApiResult 定义统一返回体
+* http api接口统一提供rest文件
+* 使用guava  commons
+* 完善日志格式
+* 跨域添加
+
 
 ## 关于更多
 
