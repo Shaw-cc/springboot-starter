@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.List;
 
 /**
- * 分页结果.
+ * 分页类.
  *
  * @author KimZing - kimzing@163.com
  * @since 2019/12/5 15:33
@@ -20,12 +20,24 @@ public class PageResult<T> {
         this.data = data;
     }
 
+    /**
+     * 总条数
+     */
     private Long total;
 
+    /**
+     * 当前页
+     */
     private Integer pageNum;
 
+    /**
+     * 页大小
+     */
     private Integer pageSize;
 
+    /**
+     * 分页数据
+     */
     private List<T> data;
 
 }
