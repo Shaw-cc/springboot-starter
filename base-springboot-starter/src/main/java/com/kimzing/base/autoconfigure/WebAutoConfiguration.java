@@ -4,6 +4,7 @@ import com.kimzing.base.autoconfigure.properties.WebProperties;
 import com.kimzing.base.web.advice.ExceptionAdvice;
 import com.kimzing.base.web.info.BaseInfoController;
 import com.kimzing.base.web.resolver.json.JsonParamResolver;
+import com.kimzing.base.web.resolver.json.MethodParamResolverConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
@@ -13,12 +14,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.method.support.HandlerMethodArgumentResolver;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-
-import javax.annotation.Resource;
-import java.util.List;
-import java.util.Map;
 
 /**
  * RestTemplate自动配置.
@@ -28,7 +23,7 @@ import java.util.Map;
  */
 @Configuration
 @EnableConfigurationProperties({WebProperties.class})
-public class WebAutoConfiguration implements WebMvcConfigurer {
+public class WebAutoConfiguration {
 
     /**
      * 注入RestTemplate实例，用于Http接口调用
@@ -73,32 +68,27 @@ public class WebAutoConfiguration implements WebMvcConfigurer {
         return new ExceptionAdvice();
     }
 
-    ///**
-    // * json参数解析器
-    // *
-    // * @return
-    // */
-    //@Bean
-    //@ConditionalOnProperty(prefix = "base.web.resolver.json",
-    //        name = "enabled", havingValue = "true", matchIfMissing = true)
-    //@ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)
-    //public MethodParamResolverConfiguration methodParamResolverConfiguration(ApplicationContext context) {
-    //    Map<String, HandlerMethodArgumentResolver> beans = context.getBeansOfType(HandlerMethodArgumentResolver.class);
-    //    beans.forEach();
-    //    return new MethodParamResolverConfiguration();
-    //}
-
-    @Resource
-    ApplicationContext context;
-
+    /**
+     * json参数解析器
+     *
+     * @return
+     */
     @Bean
     public JsonParamResolver jsonParamResolver() {
         return new JsonParamResolver();
     }
 
-    @Override
-    public void addArgumentResolvers(List<HandlerMethodArgumentResolver> resolvers) {
-        Map<String, HandlerMethodArgumentResolver> beans = context.getBeansOfType(HandlerMethodArgumentResolver.class);
-        beans.forEach((name, bean) -> resolvers.add(bean));
+    /**
+     * json参数解析器配置
+     *
+     * @return
+     */
+    @Bean
+    @ConditionalOnProperty(prefix = "base.web.resolver.json",
+            name = "enabled", havingValue = "true", matchIfMissing = true)
+    @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)
+    public MethodParamResolverConfiguration methodParamResolverConfiguration(ApplicationContext context) {
+        return new MethodParamResolverConfiguration(context);
     }
+
 }
