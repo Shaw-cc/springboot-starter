@@ -1,4 +1,4 @@
-package com.kimzing.base.web.resolver.json;
+package com.kimzing.base.web.resolver;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;

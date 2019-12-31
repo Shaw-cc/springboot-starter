@@ -4,7 +4,7 @@ import com.kimzing.base.autoconfigure.properties.WebProperties;
 import com.kimzing.base.web.advice.ExceptionAdvice;
 import com.kimzing.base.web.info.BaseInfoController;
 import com.kimzing.base.web.resolver.json.JsonParamResolver;
-import com.kimzing.base.web.resolver.json.MethodParamResolverConfiguration;
+import com.kimzing.base.web.resolver.MethodParamResolverConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
