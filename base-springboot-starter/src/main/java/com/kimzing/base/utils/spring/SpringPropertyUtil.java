@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
  */
 public final class SpringPropertyUtil {
 
-    private static Environment environment = SpringContextUtil.getBean(Environment.class);
+    private static Environment environment = SpringContextUtil.getSingleBeanByClass(Environment.class);
 
     private SpringPropertyUtil() {
     }

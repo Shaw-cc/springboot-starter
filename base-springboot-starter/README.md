@@ -81,7 +81,7 @@
 
 ## 项目使用
 
-:green_book:[使用文档](doc/utils.md)
+:green_book:[使用文档](doc/learn.md)
 
 ## TODO
 
