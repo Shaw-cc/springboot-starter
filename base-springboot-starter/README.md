@@ -63,6 +63,20 @@
         └── resolver      # 参数解析器
 ```
 
+## 脚本命令
+
+- 本地安装(cmd/install.sh)
+
+```bash
+mvn install -Dmaven.test.skip=true
+```
+
+- 上传远程仓库(cmd/deploy.sh)
+
+```bash
+mvn deploy -Dmaven.test.skip=true
+```
+
 ## 项目规约
 
 ### 版本
