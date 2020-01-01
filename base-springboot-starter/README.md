@@ -85,13 +85,13 @@
 
 ## TODO
 
-* 完善异常机制
-* Mybatis/Hibernate分页包装
-* 请求链路中添加请求id
-* 添加ApiResult 定义统一返回体
-* http api接口统一提供rest文件
-* 使用guava  commons
-* 添加跨域配置
+- [ ] 完善异常机制
+- [ ] Mybatis/Hibernate分页包装
+- [ ] 请求链路中添加请求id
+- [ ] 添加ApiResult 定义统一返回体
+- [ ] http api接口统一提供rest文件
+- [ ] 使用guava  commons
+- [ ] 添加跨域配置
 
 
 ## 关于更多
