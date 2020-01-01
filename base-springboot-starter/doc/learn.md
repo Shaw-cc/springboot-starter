@@ -35,11 +35,7 @@ desc为该方法的描述信息，建议填写。
 方法标记: [UserController](../../src/base-springboot-starter-test/src/main/java/com/kimzing/test/controller/UserController.java)
 
 ```bash
-2020-01-01 16:23:42.894  INFO 12278 --- [nio-8080-exec-1] com.kimzing.base.utils.log.LogUtil       : method exec: 
-[{"className":"UserController","desc":"新增用户","elapsedTimeInMilliseconds":191,"endTime":"2020-01-01 16:23:42:799",
-"methodName":"save","params":{"UserDTO":{"age":25,"gender":"MAN","password":"123456","username":"kimzing"}},
-"result":{"code":"0","data":{"age":25,"gender":"MAN","id":1,"password":"123456","username":"kimzing"},"msg":"SUCCESS",
-"ts":1577867022799},"startTime":"2020-01-01 16:23:42:608"}]
+2020-01-01 16:23:42.894  INFO 12278 --- [nio-8080-exec-1] com.kimzing.base.utils.log.LogUtil       : method exec: [{"className":"UserController","desc":"新增用户","elapsedTimeInMilliseconds":191,"endTime":"2020-01-01 16:23:42:799","methodName":"save","params":{"UserDTO":{"age":25,"gender":"MAN","password":"123456","username":"kimzing"}},"result":{"code":"0","data":{"age":25,"gender":"MAN","id":1,"password":"123456","username":"kimzing"},"msg":"SUCCESS","ts":1577867022799},"startTime":"2020-01-01 16:23:42:608"}]
 ```
 
 ## :cherries: 2.SpringPropertyUtil
