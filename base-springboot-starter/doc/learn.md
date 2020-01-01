@@ -1,27 +1,24 @@
-# 1. 使用文档
-<!-- TOC -->
+# 使用文档
 
-- [使用文档](#使用文档)
-    - [:cherries: 打印方法执行日志](#cherries-打印方法执行日志)
-        - [功能介绍](#功能介绍)
-        - [功能配置](#功能配置)
-        - [使用方式](#使用方式)
-        - [使用示例](#使用示例)
-    - [:cherries: 读取Spring容器内属性](#cherries-读取spring容器内属性)
-        - [功能介绍](#功能介绍)
-        - [功能配置(可选)](#功能配置可选)
-        - [使用方式](#使用方式)
-        - [使用示例](#使用示例)
+* [使用文档](#%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3)
+  * :cherries:打印方法执行日志
+    * [功能介绍](#%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D)
+    * [功能配置](#%E5%8A%9F%E8%83%BD%E9%85%8D%E7%BD%AE)
+    * [使用方式](#%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F)
+    * [使用示例](#%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B)
+  * :cherries:读取Spring容器内属性
+    * [功能介绍](#%E5%8A%9F%E8%83%BD%E4%BB%8B%E7%BB%8D-1)
+    * [功能配置(可选)](#%E5%8A%9F%E8%83%BD%E9%85%8D%E7%BD%AE%E5%8F%AF%E9%80%89)
+    * [使用方式](#%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F-1)
+    * [使用示例](#%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B-1)
 
-<!-- /TOC -->
+## :cherries: 打印方法执行日志
 
-## 1.1. :cherries: 打印方法执行日志
-
-### 1.1.1. 功能介绍
+### 功能介绍
 
 打印方法的入参、返回值、执行时间、异常信息等信息
 
-### 1.1.2. 功能配置
+### 功能配置
 
 ```yaml
 base:
@@ -30,7 +27,7 @@ base:
     time-pattern: yyyy-MM-dd HH:mm:ss # 配置方法信息中时间的格式
 ```
 
-### 1.1.3. 使用方式
+### 使用方式
 
 * 使用默认实现[DefaultLogAspect.java](../src/main/java/com/kimzing/base/log/impl/DefaultLogAspect.java)，打印方法执行信息
 
@@ -61,19 +58,19 @@ public class JsonLogAspect extends LogAspect {
 }
 ```
 
-### 1.1.4. 使用示例
+### 使用示例
 
 自定义处理类: 使用Json格式进行日志打印: [JsonLogAspect](../../src/base-springboot-starter-test/src/main/java/com/kimzing/test/config/log/JsonLogAspect.java)
 
 方法标记示例: [UserController](../../src/base-springboot-starter-test/src/main/java/com/kimzing/test/controller/UserController.java)
 
-## 1.2. :cherries: 读取Spring容器内属性
+## :cherries: 读取Spring容器内属性
 
-### 1.2.1. 功能介绍
+### 功能介绍
 
 读取Spring容器内属性，包含`application-*.yml`、@PropertySource加载的所有Spring属性，通过`key`获取`value`
 
-### 1.2.2. 功能配置(可选)
+### 功能配置(可选)
 
 自定义需要加载的配置文件, 配置文件中的属性将会被装入Spring容器属性中。
 
@@ -83,7 +80,7 @@ base:
     files: ["message.properties","exception.properties"]
 ```
 
-### 1.2.3. 使用方式
+### 使用方式
 
 ```java
 public class SpringPropertyUtilTest {
@@ -105,7 +102,7 @@ public class SpringPropertyUtilTest {
 }
 ```
 
-### 1.2.4. 使用示例
+### 使用示例
 
 [SpringPropertyUtilTest](../../base-springboot-starter-test/src/test/java/com/kimzing/test/SpringPropertyUtilTest.java)
 
