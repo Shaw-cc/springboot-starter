@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.kimzing</groupId>
-    <artifactId>springboot-web-template</artifactId>
+    <artifactId>base-springboot-starter-test</artifactId>
     <version>1.0.0-RELEASE</version>
     <name>base-springboot-starter-test</name>
     <description>test case for base-springboot-starter</description>
