@@ -30,7 +30,8 @@ desc为该方法的描述信息，建议填写。
 
 ### 使用示例
 
-自定义日志处理: [JsonLogAspect](../../src/base-springboot-starter-test/src/main/java/com/kimzing/test/config/log/JsonLogAspect.java)
+自定义Json日志打印: [JsonLogAspect](../../src/base-springboot-starter-test/src/main/java/com/kimzing/test/config/log/JsonLogAspect.java)
+
 方法标记: [UserController](../../src/base-springboot-starter-test/src/main/java/com/kimzing/test/controller/UserController.java)
 
 ```bash
