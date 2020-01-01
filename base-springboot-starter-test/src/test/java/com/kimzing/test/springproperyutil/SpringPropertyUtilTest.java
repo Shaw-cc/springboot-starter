@@ -1,4 +1,4 @@
-package com.kimzing.test;
+package com.kimzing.test.springproperyutil;
 
 import com.kimzing.base.utils.spring.SpringPropertyUtil;
 import org.junit.jupiter.api.Test;

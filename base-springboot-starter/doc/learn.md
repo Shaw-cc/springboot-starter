@@ -11,6 +11,10 @@
     * [功能配置(可选)](#功能配置(可选))
     * [使用方式](#使用方式-1)
     * [使用示例](#使用示例-1)
+  * [:cherries:Spring上下文工具](#:cherries:Spring上下文工具)
+    * [功能介绍](#功能介绍-2)
+    * [使用方式](#使用方式-2)
+    * [使用示例](#使用示例-2)
 
 ## :cherries:打印方法执行日志
 
@@ -104,5 +108,33 @@ public class SpringPropertyUtilTest {
 
 ### 使用示例
 
-[SpringPropertyUtilTest](../../base-springboot-starter-test/src/test/java/com/kimzing/test/SpringPropertyUtilTest.java)
+[SpringPropertyUtilTest](../../base-springboot-starter-test/src/test/java/com/kimzing/test/springproperyutil/SpringPropertyUtilTest.java)
+
+## :cherries:Spring上下文工具
+
+### 功能介绍
+
+通过ApplicationContext进行容器操作，主要用来在非容器类中获取Spring管理的容器Bean，以及获取ApplicationContext实例(用来发布事件等操作)。
+
+### 使用方式
+
+```java
+public class Demo {
+    
+    public void getInstance() {
+        // 获取单例对象
+        UserService userService = SpringContextUtil.getSingleBeanByClass(UserService.class);
+        // 包装多个相同类型的实例为Map
+        Map<String, UserService> userServiceMap = SpringContextUtil.getBeansByTypeToMap(UserService.class);
+        // 获取Spring上下文
+        ApplicationContext applicationContext = SpringContextUtil.getApplicationContext();
+        // ...
+    }
+
+}
+```
+
+### 使用示例
+
+[SpringContextUtilTest](../../base-springboot-starter-test/src/test/java/com/kimzing/test/springcontextutil/SpringContextUtilTest.java)
 
