@@ -1,6 +1,6 @@
 # 使用文档
 
-## 1. :cherries: 方法执行日志信息处理
+## :cherries: 1.方法执行日志信息处理
 
 ### 功能介绍
 
@@ -17,14 +17,14 @@ base:
 
 ### 使用方式
 
-#### 使用默认实现的日志切面打印
+* 使用默认实现的日志切面打印
 
 [DefaultLogAspect.java](../src/main/java/com/kimzing/base/log/impl/DefaultLogAspect.java)
 
 在需要执行日志处理的方法上加上`@LogKim(desc = "示例")`注解即可，方法执行时将会在控制台打印对应的执行信息。
 desc为该方法的描述信息，建议填写。
 
-#### 自定义对日志信息的处理方式
+* 自定义对日志信息的处理方式
 
 编写自定义的容器类，继承`LogAspect`, 实现`handleLogInfo(LogInfo logInfo)`方法，`LogInfo`为对应的方法日志信息，
 可以作自定义处理(持久化、落库、分析)。
@@ -42,7 +42,7 @@ desc为该方法的描述信息，建议填写。
 "ts":1577867022799},"startTime":"2020-01-01 16:23:42:608"}]
 ```
 
-## 2. :cherries: SpringPropertyUtil
+## :cherries: 2.SpringPropertyUtil
 
 ### 功能介绍
 
@@ -55,5 +55,3 @@ SpringBoot-Web项目
 ### 使用示例
 
 [SpringPropertyUtilTest](../../base-springboot-starter-test/src/test/java/com/kimzing/test/SpringPropertyUtilTest.java)
-
-## 2. :cherries: 方法
