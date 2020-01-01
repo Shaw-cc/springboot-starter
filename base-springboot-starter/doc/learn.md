@@ -19,15 +19,14 @@ base:
 
 * 使用默认实现的日志切面打印
 
-[DefaultLogAspect.java](../src/main/java/com/kimzing/base/log/impl/DefaultLogAspect.java)
+默认实现: [DefaultLogAspect.java](../src/main/java/com/kimzing/base/log/impl/DefaultLogAspect.java)
 
 在需要执行日志处理的方法上加上`@LogKim(desc = "示例")`注解即可，方法执行时将会在控制台打印对应的执行信息。
 desc为该方法的描述信息，建议填写。
 
 * 自定义对日志信息的处理方式
 
-编写自定义的容器类，继承`LogAspect`, 实现`handleLogInfo(LogInfo logInfo)`方法，`LogInfo`为对应的方法日志信息，
-可以作自定义处理(持久化、落库、分析)。
+编写自定义的容器类，继承`LogAspect`, 实现`handleLogInfo(LogInfo logInfo)`方法，`LogInfo`为对应的方法日志信息，可以作自定义处理(持久化、落库、分析)。
 
 ### 使用示例
 
