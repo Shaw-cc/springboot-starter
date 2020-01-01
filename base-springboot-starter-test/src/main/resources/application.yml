@@ -1,21 +1,12 @@
-spring:
-  application:
-    name: base-springboot-starter-test
 server:
-  port: 8080
+  port: @profile.port@
+  servlet:
+    context-path: @profile.path@
 
-base:
-  log:
-    enabled: true
-    time-pattern: yyyy-MM-dd HH:mm:ss
-  web:
-    advice:
-      enabled: true
-    restTemplate:
-      enabled: true
-    info:
-      version: 1.0.0
-      desc: 基础项目
-      enabled: true
-  property:
-    files: ["message.properties","exception.properties"]
+spring:
+  profiles:
+    active: @profile.active@
+  application:
+    name: @project.name@
+    version: @project.version@
+    description: @project.description@

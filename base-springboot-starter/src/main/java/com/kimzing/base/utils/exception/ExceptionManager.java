@@ -1,4 +1,4 @@
-package com.kimzing.base.exception;
+package com.kimzing.base.utils.exception;
 
 /**
  * 异常管理类.

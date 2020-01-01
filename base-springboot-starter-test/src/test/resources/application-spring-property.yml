@@ -1,0 +1,3 @@
+base:
+  property:
+    files: ["classpath:message.properties","classpath:exception.properties"]

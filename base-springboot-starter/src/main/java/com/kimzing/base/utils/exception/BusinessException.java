@@ -1,4 +1,4 @@
-package com.kimzing.base.exception;
+package com.kimzing.base.utils.exception;
 
 /**
  * 自定义业务异常类.

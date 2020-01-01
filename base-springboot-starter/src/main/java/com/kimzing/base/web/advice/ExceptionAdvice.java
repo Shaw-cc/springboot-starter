@@ -1,6 +1,6 @@
 package com.kimzing.base.web.advice;
 
-import com.kimzing.base.exception.BusinessException;
+import com.kimzing.base.utils.exception.BusinessException;
 import com.kimzing.base.utils.result.ApiResult;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;

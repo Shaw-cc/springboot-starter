@@ -22,7 +22,7 @@ public final class SpringContextUtil implements ApplicationContextAware {
     }
 
     /**
-     * 根据名称和类型获取对应实例
+     * 根据名称和类型获取T实例
      *
      * @param name
      * @param clazz

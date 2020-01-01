@@ -1,4 +1,6 @@
-package com.kimzing.test.domain.po;
+package com.kimzing.base.utils.po;
+
+import lombok.Data;
 
 import java.time.LocalDateTime;
 
@@ -8,10 +10,15 @@ import java.time.LocalDateTime;
  * @author KimZing - kimzing@163.com
  * @since 2019/12/28 13:10
  */
+@Data
 public abstract class AbstractPO {
+
+    protected String creater;
+
+    protected String modifier;
 
     protected LocalDateTime createTime;
 
-    protected LocalDateTime updateTime;
+    protected LocalDateTime modifyTime;
 
 }

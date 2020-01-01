@@ -1,8 +1,8 @@
 package com.kimzing.test.domain.dto;
 
 import com.kimzing.test.domain.vo.GenderEnum;
-import lombok.Builder;
 import lombok.Data;
+import org.apache.commons.lang3.RandomStringUtils;
 
 /**
  * 用户信息实体.
@@ -11,14 +11,13 @@ import lombok.Data;
  * @since 2019/12/28 12:52
  */
 @Data
-@Builder
 public class UserDTO {
 
     private Long id;
 
     private String username;
 
-    private String nickname;
+    private String password;
 
     private Integer age;
 

@@ -63,8 +63,6 @@
         └── resolver      # 参数解析器
 ```
 
-
-
 ## 项目规约
 
 ### 版本
@@ -79,13 +77,11 @@
 
 ### 可用性
 
-* 相应`*-springboot-starter`必须在对应的`*-springboot-starter-test`项目进行标准测试
-
-
+* `*-springboot-starter`必须在对应的`*-springboot-starter-test`项目进行标准测试
 
 ## 项目使用
 
-:green_book:[SpringBoot相关配置工具使用介绍](base-springboot-starter/spring.md)   :blue_book:[通用工具使用介绍 ](base-springboot-starter/spring.md)
+:green_book:[使用文档](doc/utils.md)
 
 ## TODO
 
@@ -95,13 +91,12 @@
 * 添加ApiResult 定义统一返回体
 * http api接口统一提供rest文件
 * 使用guava  commons
-* 完善日志格式
-* 跨域添加
+* 添加跨域配置
 
 
 ## 关于更多
 
-[:bus:更新记录](../CHANGELOG.md)  :bus:[自制Starter](LEARN.md)
+[:bus:更新记录](CHANGELOG.md)  :bus:[自制Starter](doc/make-starter.md)
 
 ## 赞助
 

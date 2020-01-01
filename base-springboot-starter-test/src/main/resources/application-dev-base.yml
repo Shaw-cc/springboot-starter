@@ -1,0 +1,21 @@
+# 基本属性配置
+base:
+  log:
+    enabled: true
+    time-pattern: yyyy-MM-dd HH:mm:ss:SSS
+  web:
+    advice:
+      enabled: true
+    restTemplate:
+      enabled: true
+    info:
+      path: /info
+      enabled: true
+      params:
+        application: ${spring.application.name}
+        port: ${server.port}
+        profile: ${spring.profiles.active}
+        version: ${spring.application.version}
+        description: ${spring.application.description}
+  property:
+    files: ["classpath:message.properties","classpath:exception.properties"]

@@ -9,16 +9,23 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.kimzing</groupId>
-    <artifactId>base-springboot-starter-test</artifactId>
+    <artifactId>springboot-web-template</artifactId>
     <version>1.0.0-RELEASE</version>
     <name>base-springboot-starter-test</name>
-    <description>Demo project for Spring Boot</description>
+    <description>test case for base-springboot-starter</description>
 
     <properties>
+        <port>8080</port>
+        <path>/api</path>
         <java.version>1.8</java.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.kimzing</groupId>
+            <artifactId>base-springboot-starter</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -28,9 +35,8 @@
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.kimzing</groupId>
-            <artifactId>base-springboot-starter</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
         <dependency>
@@ -46,18 +52,35 @@
         </dependency>
     </dependencies>
 
-    <repositories>
-        <repository>
-            <id>KimZing-SNAPSHOT</id>
-            <name>KimZing</name>
-            <url>http://mvn.kimzing.com/nexus/content/repositories/snapshots/</url>
-        </repository>
-        <repository>
-            <id>KimZing-RELEASE</id>
-            <name>KimZing</name>
-            <url>http://mvn.kimzing.com/nexus/content/repositories/releases/</url>
-        </repository>
-    </repositories>
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <profile.port>8080</profile.port>
+                <profile.path>/api</profile.path>
+                <profile.active>dev</profile.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>sit</id>
+            <properties>
+                <profile.port>8080</profile.port>
+                <profile.path>/api</profile.path>
+                <profile.active>sit</profile.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>pro</id>
+            <properties>
+                <profile.port>8080</profile.port>
+                <profile.path>/api</profile.path>
+                <profile.active>pro</profile.active>
+            </properties>
+        </profile>
+    </profiles>
 
     <build>
         <plugins>
