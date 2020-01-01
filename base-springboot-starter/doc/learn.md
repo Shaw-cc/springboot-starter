@@ -1,6 +1,6 @@
 # 使用文档
 
-## :cherries: 1.方法执行日志信息处理
+## :cherries: 收集方法执行的相关信息
 
 ### 功能介绍
 
@@ -11,22 +11,41 @@
 ```yaml
 base:
   log:
-    enabled: true # 开启日志打印功能
-    time-pattern: yyyy-MM-dd HH:mm:ss # 配置日志中时间的打印格式
+    enabled: true # 开启方法信息收集功能
+    time-pattern: yyyy-MM-dd HH:mm:ss # 配置方法信息中时间的格式
 ```
 
 ### 使用方式
 
-* 使用默认实现的日志切面打印
+* 使用默认实现对方法执行信息进行打印
 
 默认实现: [DefaultLogAspect.java](../src/main/java/com/kimzing/base/log/impl/DefaultLogAspect.java)
 
-在需要执行日志处理的方法上加上`@LogKim(desc = "示例")`注解即可，方法执行时将会在控制台打印对应的执行信息。
-desc为该方法的描述信息，建议填写。
+在需要进行信息收集的方法上加上`@LogKim(desc = "示例")`注解即可，方法执行时将会在控制台打印对应的执行信息。desc为该方法的描述信息，建议填写。
 
-* 自定义对日志信息的处理方式
+```java
+public class Demo {
+    @LogKim(desc = "示例方法")
+    public String method() {
+        return "hello";
+    }
+}
+```
+
+* 自定义对方法执行信息的处理方式
 
 编写自定义的容器类，继承`LogAspect`, 实现`handleLogInfo(LogInfo logInfo)`方法，`LogInfo`为对应的方法日志信息，可以作自定义处理(持久化、落库、分析)。
+
+```java
+@Component
+public class JsonLogAspect extends LogAspect {
+
+    @Override
+    public void handleLogInfo(LogInfo logInfo) {
+        LogUtil.info("method exec: [{}]", JSON.toJSONString(logInfo));
+    }
+}
+```
 
 ### 使用示例
 
@@ -34,19 +53,43 @@ desc为该方法的描述信息，建议填写。
 
 方法标记: [UserController](../../src/base-springboot-starter-test/src/main/java/com/kimzing/test/controller/UserController.java)
 
-```bash
-2020-01-01 16:23:42.894  INFO 12278 --- [nio-8080-exec-1] com.kimzing.base.utils.log.LogUtil       : method exec: [{"className":"UserController","desc":"新增用户","elapsedTimeInMilliseconds":191,"endTime":"2020-01-01 16:23:42:799","methodName":"save","params":{"UserDTO":{"age":25,"gender":"MAN","password":"123456","username":"kimzing"}},"result":{"code":"0","data":{"age":25,"gender":"MAN","id":1,"password":"123456","username":"kimzing"},"msg":"SUCCESS","ts":1577867022799},"startTime":"2020-01-01 16:23:42:608"}]
-```
-
-## :cherries: 2.SpringPropertyUtil
+## :cherries: 读取Spring容器内属性
 
 ### 功能介绍
 
-读取Spring容器内属性，包含`application-*.yml`、@PropertySource加载的所有Spring属性
+读取Spring容器内属性，包含`application-*.yml`、@PropertySource加载的所有Spring属性，通过`key`获取`value`
 
-### 使用环境
+### 功能配置
 
-SpringBoot-Web项目
+定义需要加载的配置文件, 指定的配置文件中的属性将会被装入Spring容器属性中。
+
+```yaml
+base:
+  property:
+    files: ["message.properties","exception.properties"]
+```
+
+### 使用方式
+
+```java
+public class SpringPropertyUtilTest {
+
+    /**
+     * 获取容器内属性，如果不存在，返回null
+     */
+    public void testGetPropertyWhenKeyIsNotExist() {
+        String value = SpringPropertyUtil.getValue("1001");
+        // value = "test-message"
+
+        String value = SpringPropertyUtil.getValue("not-exist");
+        // value = null
+
+        String defaultValue = "default message";
+        String value = SpringPropertyUtil.getValueWithDefault("not-exist", defaultValue);
+        // value = "default message"
+    }
+}
+```
 
 ### 使用示例
 
