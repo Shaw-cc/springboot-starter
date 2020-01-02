@@ -43,7 +43,9 @@
 
 :eyes:[SNAPSHOT版本](http://mvn.kimzing.com/nexus/content/repositories/snapshots/com/kimzing/base-springboot-starter/)
 
+## 项目使用
 
+:green_book:[使用文档](doc/learn.md)
 
 ## 结构说明
 
@@ -92,10 +94,6 @@ mvn deploy -Dmaven.test.skip=true
 ### 可用性
 
 * `*-springboot-starter`必须在对应的`*-springboot-starter-test`项目进行标准测试
-
-## 项目使用
-
-:green_book:[使用文档](doc/learn.md)
 
 ## TODO
 
