@@ -1,6 +1,6 @@
 # springboot-starter
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?label=license)](https://github.com/KimZing/base-springboot-starter/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?label=license)](https://github.com/KimZing/springboot-starter/blob/master/LICENSE)
 
 ## 简介
 
