@@ -118,8 +118,8 @@ mvn deploy -Dmaven.test.skip=true
 
 **支付宝**
 
-![](http://images.kimzing.com/images/1.png?x-oss-process=style/resize)
+![](https://images.kimzing.com/images/public/alipay-197x197.png)
 
 **微信**
 
-![](http://images.kimzing.com/images/2.png?x-oss-process=style/resize)
+![](https://images.kimzing.com/images/public/wechatpay-197x197.png)
