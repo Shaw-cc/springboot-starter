@@ -2,8 +2,9 @@ package com.kimzing.test.controller;
 
 import com.kimzing.base.log.LogKim;
 import com.kimzing.base.utils.result.ApiResult;
-import com.kimzing.base.utils.spring.SpringPropertyUtil;
+import com.kimzing.base.web.resolver.json.JsonParam;
 import com.kimzing.test.domain.dto.UserDTO;
+import com.kimzing.test.domain.dto.UserQueryDTO;
 import com.kimzing.test.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,11 +22,6 @@ public class UserController {
 
     @Resource
     UserService userService;
-
-    @GetMapping("/test")
-    public String hello() {
-        return SpringPropertyUtil.getValue("spring.redis.port");
-    }
 
     @LogKim(desc = "新增用户")
     @PostMapping
@@ -56,6 +52,16 @@ public class UserController {
     @GetMapping("/list")
     public ApiResult list(@RequestParam Integer pageNum, @RequestParam Integer pageSize) {
         return userService.list(pageNum, pageSize);
+    }
+
+    /**
+     *
+     * @return
+     */
+    @LogKim("根据Json参数进行查询")
+    @GetMapping("/list/condition")
+    public ApiResult listByCondition(@JsonParam UserQueryDTO userQueryDTO) {
+        return ApiResult.success(userQueryDTO);
     }
 
 }

@@ -29,4 +29,7 @@ GET http://localhost:8080/api/user/list?pageNum=1&pageSize=10
 ### 删除用户
 DELETE http://localhost:8080/api/user/1
 
+### 根据条件查询用户列表
+GET http://localhost:8080/api/user/list/condition?{"ageFrom":"18","ageTo":"24"}
+
 ###
