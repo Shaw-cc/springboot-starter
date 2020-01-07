@@ -15,6 +15,10 @@
     * [功能介绍](#功能介绍-2)
     * [使用方式](#使用方式-2)
     * [使用示例](#使用示例-2)
+  * :cherries:在Get请求使用Json进行传参 [JsonParam.java](../src/main/java/com/kimzing/base/web/resolver/json/JsonParam.javaa)
+    * [功能介绍](#功能介绍-3)
+    * [使用方式](#使用方式-3)
+    * [使用示例](#使用示例-3)
 
 ## :cherries:打印方法执行日志 [LogAspect.java](../src/main/java/com/kimzing/base/log/LogAspect.java)
 
@@ -137,4 +141,22 @@ public class Demo {
 ### 使用示例
 
 [SpringContextUtilTest](../../base-springboot-starter-test/src/test/java/com/kimzing/test/springcontextutil/SpringContextUtilTest.java)
+
+## :cherries:在Get请求中使用Json进行传参
+
+### 功能介绍
+
+在Restful风格的url中，要求使用get方式进行资源获取，然而在复杂查询时，使用get方式进行参数传递就不是太方便了，所以封装了get携带json参数的方式，会更加优雅一些。
+
+查询用户示例: GET http://localhost:8080/user?{"ageFrom":18,"ageTo":24,"gender":"MAN"}
+
+### 使用方式
+
+- 客户端: 发送Get查询请求时使用`GET http://localhost:8080/user?{}`的方式进行传参。
+- 服务端: 在接收的参数体上面加上@JsonParam注解即可
+
+### 使用示例
+
+[UserController#listByCondition](../../base-springboot-starter-test/src/main/java/com/kimzing/test/controller/UserController.java)
+
 

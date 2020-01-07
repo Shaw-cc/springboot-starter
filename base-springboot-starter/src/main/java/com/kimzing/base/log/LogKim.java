@@ -1,5 +1,7 @@
 package com.kimzing.base.log;
 
+import org.springframework.core.annotation.AliasFor;
+
 import java.lang.annotation.*;
 
 /**
@@ -21,6 +23,15 @@ public @interface LogKim {
      *
      * @return
      */
+    @AliasFor("desc")
+    String value() default "";
+
+    /**
+     * 对应的方法描述
+     *
+     * @return
+     */
+    @AliasFor("value")
     String desc() default "";
 
 }
