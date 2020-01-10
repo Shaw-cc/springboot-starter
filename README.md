@@ -13,12 +13,3 @@
 
 如果你喜欢此项目并且它对你确实有帮助，欢迎给我打赏一杯:coffee:~ 
 
-:chicken: just for fun ~
-
-**支付宝**
-
-![](http://images.kimzing.com/images/public/alipay-197x197.png)
-
-**微信**
-
-![](http://images.kimzing.com/images/public/wechatpay-197x197.png)
