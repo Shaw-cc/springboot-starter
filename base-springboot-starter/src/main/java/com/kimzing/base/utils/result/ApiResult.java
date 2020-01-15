@@ -15,7 +15,7 @@ public abstract class ApiResult {
 
     public String code;
 
-    public String msg;
+    public String message;
 
     /**
      * 创建成功返回体，无数据
@@ -39,26 +39,26 @@ public abstract class ApiResult {
     /**
      * 创建错误返回体，通过code在配置文件进行读取相应错误信息
      *
-     * @param code 错误码
+     * @param codes 错误码
      * @return
      */
-    public static ApiResult error(String code) {
-        return new ErrorApiResult(code);
+    public static ApiResult error(String... codes) {
+        return new ErrorApiResult(codes);
     }
 
     /**
      * 创建错误返回体
      *
      * @param code 错误码
-     * @param msg  错误信息
+     * @param message  错误信息
      * @return
      */
-    public static ApiResult error(String code, String msg) {
-        return new ErrorApiResult(code, msg);
+    public static ApiResult error(String code, String message) {
+        return new ErrorApiResult(code, message);
     }
 
     /**
-     * 根据code获取msg
+     * 根据code获取message
      *
      * @param code
      * @return

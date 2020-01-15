@@ -18,7 +18,7 @@ public final class SuccessApiResult<T> extends ApiResult {
     public SuccessApiResult(T data) {
         this.ts = System.currentTimeMillis();
         this.code = "0";
-        this.msg = "SUCCESS";
+        this.message = "SUCCESS";
         this.data = data;
     }
 

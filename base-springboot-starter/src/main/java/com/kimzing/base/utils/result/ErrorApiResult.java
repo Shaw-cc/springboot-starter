@@ -2,6 +2,10 @@ package com.kimzing.base.utils.result;
 
 import lombok.NoArgsConstructor;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  * 成功返回体.
  *
@@ -11,15 +15,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public final class ErrorApiResult extends ApiResult {
 
-    public ErrorApiResult(String code) {
+    public ErrorApiResult(String... codes) {
         this.ts = System.currentTimeMillis();
-        this.code = code;
-        this.msg = getMessageByCode(code);
+        List<String> codeList = Arrays.asList(codes);
+        this.code = codeList.stream().collect(Collectors.joining(","));
+        this.message = codeList.stream().map(c -> getMessageByCode(c)).collect(Collectors.joining(","));
     }
 
-    public ErrorApiResult(String code, String msg) {
+    public ErrorApiResult(String code, String message) {
         this.ts = System.currentTimeMillis();
         this.code = code;
-        this.msg = msg;
+        this.message = message;
     }
 }
