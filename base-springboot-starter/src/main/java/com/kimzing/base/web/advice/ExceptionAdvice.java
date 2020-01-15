@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import javax.validation.ConstraintViolationException;
+import javax.validation.ValidationException;
+import java.util.stream.Collectors;
+
 /**
  * 异常捕捉.
  *
@@ -28,6 +32,27 @@ public class ExceptionAdvice {
     public ApiResult handlerBusinessException(BusinessException businessException) {
         return ApiResult.error(businessException.getMessage());
     }
+
+    /**
+     * 校验异常处理
+     * @param validationException
+     * @return
+     */
+    @ExceptionHandler(ValidationException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ApiResult handlerValidationException(ValidationException validationException) {
+        // 如果是ConstraintViolationException，则可能出现多个异常信息
+        if (validationException instanceof ConstraintViolationException) {
+            ConstraintViolationException constraintViolationException =
+                    (ConstraintViolationException) validationException;
+
+            String[] codes = constraintViolationException.getConstraintViolations().stream()
+                    .map(c -> c.getMessage()).collect(Collectors.toList()).toArray(new String[]{});
+            return ApiResult.error(codes);
+        }
+        return ApiResult.error(validationException.getMessage());
+    }
+
 
     /**
      * 意料之外的异常处理
