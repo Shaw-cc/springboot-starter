@@ -1,7 +1,6 @@
 package com.kimzing.base.utils.result;
 
 import com.kimzing.base.utils.spring.SpringPropertyUtil;
-import org.apache.commons.lang3.StringUtils;
 
 /**
  * 通用返回体.
@@ -64,11 +63,7 @@ public abstract class ApiResult {
      * @return
      */
     protected String getMessageByCode(String code) {
-        String message = SpringPropertyUtil.getValue(code);
-        if (StringUtils.isNotBlank(message)) {
-            return message;
-        }
-        return code;
+        return SpringPropertyUtil.getValueWithDefault(code, code);
     }
 
 }
