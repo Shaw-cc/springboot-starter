@@ -105,6 +105,15 @@ mvn deploy -Dmaven.test.skip=true
 - [ ] 使用guava  commons
 - [ ] 添加跨域配置
 
+## FAQ
+
+### 在Controller方法中注入了ServletHttpResponse, 对OutputStream或writer进行操作后，请求报错
+
+这个问题可能是因为在打印日志时已经进行相关操作，导致第二次读取失败，可以尝试设置`base.log.enabled=true`
+
+### 在打印日志时报错`write javaBean error, fastjson version 1.2.62`
+
+可以检查代码中是否使用了FastJson等工具对`LogInfo`进行了toJsonString操作
 
 ## 关于更多
 
