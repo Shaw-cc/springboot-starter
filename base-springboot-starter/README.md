@@ -1,12 +1,10 @@
 # base-springboot-starter
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?label=license)](https://github.com/KimZing/base-springboot-starter/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?label=license)](https://github.com/KimZing/springboot-starter/blob/master/LICENSE)
 
 ## 项目简介
 
 基于SpringBoot Starter封装的基础起步依赖，主要包含常用工具类、日志及其它自动化配置, 提供对应的切入点进行个性化配置
-
-
 
 ## 快速开始
 
@@ -45,7 +43,7 @@
 
 ## 项目使用
 
-:green_book:[使用文档](doc/learn.md)
+:green_book:[使用文档](http://blog.kimzing.com/springboot/starter/base-springboot-starter:%E7%9B%AE%E5%BD%95/)
 
 ## 结构说明
 
